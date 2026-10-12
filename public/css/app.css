@@ -1,0 +1,163 @@
+/* Employee Work Management — supplementary styles on top of Bootstrap 5. */
+
+:root {
+    --ewm-sidebar-width: 230px;
+    --ewm-sidebar-bg: #1f2a37;
+    --ewm-accent: #2563eb;
+    --ewm-border: #e5e7eb;
+    --ewm-muted: #6b7280;
+}
+
+body {
+    background: #f4f6f9;
+    font-size: 0.925rem;
+    overflow-x: hidden;
+}
+
+/* Sidebar (desktop) */
+.ewm-sidebar {
+    width: var(--ewm-sidebar-width);
+    min-height: 100vh;
+    background: var(--ewm-sidebar-bg);
+}
+
+.ewm-sidebar .nav-link {
+    color: #cbd5e1;
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.375rem;
+}
+
+.ewm-sidebar .nav-link:hover,
+.ewm-sidebar .nav-link.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.ewm-brand {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Main content area: leave room for the fixed sidebar on large screens. */
+.ewm-main {
+    min-width: 0;
+    padding: 1rem;
+}
+
+@media (min-width: 992px) {
+    .ewm-main {
+        margin-left: var(--ewm-sidebar-width);
+        padding: 1.25rem 1.5rem;
+    }
+
+    .ewm-sidebar-fixed {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        overflow-y: auto;
+    }
+}
+
+/* Compact cards with consistent height and padding. */
+.ewm-card {
+    background: #fff;
+    border: 1px solid var(--ewm-border);
+    border-radius: 0.5rem;
+    padding: 0.9rem 1rem;
+    height: 100%;
+}
+
+.ewm-stat-label {
+    color: var(--ewm-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.ewm-stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.ewm-section {
+    background: #fff;
+    border: 1px solid var(--ewm-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ewm-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Tables scroll horizontally inside their wrapper instead of the page. */
+.ewm-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ewm-table td,
+.ewm-table th {
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.ewm-table td.ewm-wrap,
+.ewm-table th.ewm-wrap {
+    white-space: normal;
+    min-width: 200px;
+}
+
+.ewm-empty {
+    text-align: center;
+    color: var(--ewm-muted);
+    padding: 1.5rem 0.5rem;
+}
+
+.ewm-overdue {
+    color: #b91c1c;
+    font-weight: 600;
+}
+
+.ewm-page-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ewm-page-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ewm-text-pre {
+    white-space: pre-line;
+}
+
+/* Login page */
+.ewm-auth-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.ewm-auth-card {
+    width: 100%;
+    max-width: 380px;
+    background: #fff;
+    border: 1px solid var(--ewm-border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
